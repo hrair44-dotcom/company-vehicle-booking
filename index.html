@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ระบบจองรถบริษัท</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: Arial, sans-serif;
+      background: #f1f5f9; color: #1e293b;
+    }
+    header {
+      background: #123b64; color: white;
+      padding: 24px 16px; text-align: center;
+    }
+    header h1 { margin: 0 0 8px; font-size: 25px; }
+    main {
+      max-width: 760px; margin: 24px auto;
+      padding: 0 14px;
+    }
+    .card {
+      background: white; padding: 22px;
+      border-radius: 14px; margin-bottom: 18px;
+      box-shadow: 0 3px 12px #0000000d;
+    }
+    h2 { font-size: 19px; margin-top: 0; }
+    label {
+      display: block; font-weight: bold;
+      margin: 14px 0 6px;
+    }
+    input, select, textarea {
+      width: 100%; padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px; font-size: 16px;
+    }
+    button {
+      width: 100%; margin-top: 20px;
+      padding: 14px; border: 0; border-radius: 8px;
+      background: #1677d2; color: white;
+      font-size: 16px; font-weight: bold; cursor: pointer;
+    }
+    .note { color: #64748b; font-size: 13px; line-height: 1.6; }
+    .status {
+      padding: 12px; border-radius: 8px;
+      background: #eff6ff; line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚗 ระบบจองรถบริษัท</h1>
+    <div>แบบฟอร์มขอใช้รถส่วนกลาง</div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>📝 ข้อมูลผู้ขอใช้รถ</h2>
+      <form id="bookingForm">
+        <label for="employee">ชื่อผู้จอง *</label>
+        <input id="employee" required placeholder="ชื่อ - นามสกุล">
+
+        <label for="department">แผนก *</label>
+        <input id="department" required placeholder="ระบุแผนก">
+
+        <label for="phone">เบอร์ติดต่อ *</label>
+        <input id="phone" type="tel" required placeholder="เบอร์โทรศัพท์">
+
+        <label for="vehicle">รถที่ต้องการใช้ *</label>
+        <select id="vehicle" required>
+          <option value="">-- เลือกรถ --</option>
+          <option>รถบริษัทคันที่ 1</option>
+          <option>รถบริษัทคันที่ 2</option>
+          <option>รถบริษัทคันที่ 3</option>
+          <option>รถบริษัทคันที่ 4</option>
+          <option>รถบริษัทคันที่ 5</option>
+          <option>รถบริษัทคันที่ 6</option>
+          <option>รถบริษัทคันที่ 7</option>
+          <option>รถบริษัทคันที่ 8</option>
+          <option>รถบริษัทคันที่ 9</option>
+          <option>รถบริษัทคันที่ 10</option>
+          <option>รถบริษัทคันที่ 11</option>
+          <option>รถบริษัทคันที่ 12</option>
+          <option>รถบริษัทคันที่ 13</option>
+          <option>รถบริษัทคันที่ 14</option>
+          <option>รถบริษัทคันที่ 15</option>
+        </select>
+
+        <label for="date">วันที่ใช้รถ *</label>
+        <input id="date" type="date" required>
+
+        <label for="start">เวลาเริ่มใช้ *</label>
+        <input id="start" type="time" required>
+
+        <label for="end">เวลาคืนรถ *</label>
+        <input id="end" type="time" required>
+
+        <label for="destination">สถานที่ไป *</label>
+        <input id="destination" required placeholder="ระบุสถานที่">
+
+        <label for="purpose">วัตถุประสงค์ *</label>
+        <textarea id="purpose" required rows="3" placeholder="ระบุเหตุผลในการใช้รถ"></textarea>
+
+        <button type="submit">ส่งคำขอจองรถ</button>
+        <p class="note">
+          หมายเหตุ: หน้านี้เป็นต้นแบบสำหรับทดสอบหน้าตาเท่านั้น
+          ยังไม่ได้บันทึกข้อมูลจริง ไม่ได้ส่งคำขอถึงแอดมิน
+          และยังไม่ตรวจสอบรถว่างหรือการจองซ้ำ
+        </p>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>ℹ️ ขั้นตอนการจอง</h2>
+      <div class="status">
+        1. กรอกข้อมูลการใช้รถให้ครบถ้วน<br>
+        2. ส่งคำขอให้ผู้ดูแลระบบ<br>
+        3. รอการอนุมัติก่อนนำรถไปใช้งาน
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("นี่เป็นเพียงหน้าทดลอง ยังไม่ได้บันทึกคำขอจองรถจริง");
+    });
+  </script>
+</body>
+</html>
