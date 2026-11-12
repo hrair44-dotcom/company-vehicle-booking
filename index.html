@@ -3,140 +3,150 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ระบบจองรถบริษัท</title>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+
+  <title>AIR-4 Car Booking System</title>
+
   <style>
     * { box-sizing: border-box; }
+
     body {
-      margin: 0; font-family: Arial, sans-serif;
-      background: #f1f5f9; color: #1e293b;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      color: #1e293b;
     }
+
     header {
-      background: #123b64; color: white;
-      padding: 24px 16px; text-align: center;
+      background: #123b64;
+      color: white;
+      text-align: center;
+      padding: 28px 16px;
     }
-    header h1 { margin: 0 0 8px; font-size: 25px; }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 26px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 14px;
+    }
+
     main {
-      max-width: 760px; margin: 24px auto;
+      max-width: 900px;
+      margin: 24px auto;
       padding: 0 14px;
     }
+
     .card {
-      background: white; padding: 22px;
-      border-radius: 14px; margin-bottom: 18px;
+      background: white;
+      padding: 24px;
+      border-radius: 14px;
+      margin-bottom: 20px;
       box-shadow: 0 3px 12px #0000000d;
     }
-    h2 { font-size: 19px; margin-top: 0; }
-    label {
-      display: block; font-weight: bold;
-      margin: 14px 0 6px;
+
+    h2 {
+      font-size: 20px;
+      color: #123b64;
+      margin-top: 0;
     }
-    input, select, textarea {
-      width: 100%; padding: 12px;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px; font-size: 16px;
+
+    .steps {
+      background: #eff6ff;
+      border-radius: 10px;
+      padding: 18px;
+      line-height: 2;
     }
-    button {
-      width: 100%; margin-top: 20px;
-      padding: 14px; border: 0; border-radius: 8px;
-      background: #1677d2; color: white;
-      font-size: 16px; font-weight: bold; cursor: pointer;
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 2400px;
+      border: none;
     }
-    .note { color: #64748b; font-size: 13px; line-height: 1.6; }
-    .status {
-      padding: 12px; border-radius: 8px;
-      background: #eff6ff; line-height: 1.7;
+
+    .button {
+      display: inline-block;
+      padding: 12px 20px;
+      background: #1677d2;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #64748b;
+      font-size: 13px;
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>🚗 ระบบจองรถบริษัท</h1>
-    <div>แบบฟอร์มขอใช้รถส่วนกลาง</div>
-  </header>
 
-  <main>
-    <section class="card">
-      <h2>📝 ข้อมูลผู้ขอใช้รถ</h2>
-      <form id="bookingForm">
-        <label for="employee">ชื่อผู้จอง *</label>
-        <input id="employee" required placeholder="ชื่อ - นามสกุล">
+<header>
+  <h1>🚗 AIR-4 Car Booking System</h1>
+  <p>AIR-4 INTERNATIONAL CO., LTD.</p>
+  <p>ระบบจองรถยนต์บริษัท</p>
+</header>
 
-        <label for="department">แผนก *</label>
-        <input id="department" required placeholder="ระบุแผนก">
+<main>
 
-        <label for="phone">เบอร์ติดต่อ *</label>
-        <input id="phone" type="tel" required placeholder="เบอร์โทรศัพท์">
+  <section class="card">
+    <h2>📋 ขั้นตอนการจองรถยนต์</h2>
 
-        <label for="vehicle">รถที่ต้องการใช้ *</label>
-        <select id="vehicle" required>
-          <option value="">-- เลือกรถ --</option>
-          <option>รถบริษัทคันที่ 1</option>
-          <option>รถบริษัทคันที่ 2</option>
-          <option>รถบริษัทคันที่ 3</option>
-          <option>รถบริษัทคันที่ 4</option>
-          <option>รถบริษัทคันที่ 5</option>
-          <option>รถบริษัทคันที่ 6</option>
-          <option>รถบริษัทคันที่ 7</option>
-          <option>รถบริษัทคันที่ 8</option>
-          <option>รถบริษัทคันที่ 9</option>
-          <option>รถบริษัทคันที่ 10</option>
-          <option>รถบริษัทคันที่ 11</option>
-          <option>รถบริษัทคันที่ 12</option>
-          <option>รถบริษัทคันที่ 13</option>
-          <option>รถบริษัทคันที่ 14</option>
-          <option>รถบริษัทคันที่ 15</option>
-        </select>
+    <div class="steps">
+      1. พนักงานกรอกข้อมูลจองรถผ่าน Google Forms<br>
+      2. ระบบส่งคำขอให้ผู้จัดการฝ่ายตรวจสอบ<br>
+      3. ผู้จัดการอนุมัติคำขอ<br>
+      4. HR ตรวจสอบและอนุมัติขั้นสุดท้าย<br>
+      5. พนักงานใช้รถตามรายการที่ได้รับอนุมัติ
+    </div>
 
-        <label for="date">วันที่ใช้รถ *</label>
-        <input id="date" type="date" required>
+    <p style="font-size:13px;color:#64748b;">
+      หมายเหตุ: ขั้นตอนอนุมัติ 2 ระดับอยู่ระหว่างพัฒนา
+      ปัจจุบันระบบส่งอีเมลแจ้งเตือนคำขอได้แล้ว
+    </p>
+  </section>
 
-        <label for="start">เวลาเริ่มใช้ *</label>
-        <input id="start" type="time" required>
+  <section class="card">
+    <h2>📝 แบบฟอร์มจองรถยนต์บริษัท</h2>
 
-        <label for="end">เวลาคืนรถ *</label>
-        <input id="end" type="time" required>
-
-        <label for="destination">สถานที่ไป *</label>
-        <input id="destination" required placeholder="ระบุสถานที่">
-
-        <label for="purpose">วัตถุประสงค์ *</label>
-        <textarea id="purpose" required rows="3" placeholder="ระบุเหตุผลในการใช้รถ"></textarea>
-
-        <button type="submit">ส่งคำขอจองรถ</button>
-        <p class="note">
-          หมายเหตุ: หน้านี้เป็นต้นแบบสำหรับทดสอบหน้าตาเท่านั้น
-          ยังไม่ได้บันทึกข้อมูลจริง ไม่ได้ส่งคำขอถึงแอดมิน
-          และยังไม่ตรวจสอบรถว่างหรือการจองซ้ำ
-        </p>
-      </form>
-    </section>
-
-    <section class="card">
-      <h2>ℹ️ ขั้นตอนการจอง</h2>
-      <div class="status">
-        1. กรอกข้อมูลการใช้รถให้ครบถ้วน<br>
-        2. ส่งคำขอให้ผู้ดูแลระบบ<br>
-        3. รอการอนุมัติก่อนนำรถไปใช้งาน
-      </div>
-    </section>
-  </main>
-
-  <script>
-    document.getElementById("bookingForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-      alert("นี่เป็นเพียงหน้าทดลอง ยังไม่ได้บันทึกคำขอจองรถจริง");
-    });
-  </script>
-  <section style="max-width:900px; margin:30px auto; padding:20px;">
-    <h2 style="text-align:center;">แบบฟอร์มจองรถบริษัท</h2>
+    <p>
+      กรุณากรอกข้อมูลให้ครบถ้วนก่อนส่งคำขอ
+    </p>
 
     <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSdVI9TeqrE6ym481PNbXbwzROudYRF5oXTHbZhX_8a8ERatWw/viewform?embedded=true" width="640" height="2366" frameborder="0" marginheight="0" marginwidth="0">กำลังโหลด…</iframe>"
-        width="100%"
-        height="1000"
-        frameborder="0">
+      title="แบบฟอร์มจองรถ AIR-4"
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdVI9TeqrE6ym481PNbXbwzROudYRF5oXTHbZhX_8a8ERatWw/viewform?embedded=true"
+      loading="lazy">
     </iframe>
-</section>
+
+    <p>
+      หากแบบฟอร์มไม่แสดง สามารถเปิดโดยตรงได้
+    </p>
+
+    <a class="button"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSdVI9TeqrE6ym481PNbXbwzROudYRF5oXTHbZhX_8a8ERatWw/viewform"
+       target="_blank"
+       rel="noopener noreferrer">
+      เปิด Google Forms
+    </a>
+
+  </section>
+
+</main>
+
+<footer>
+  AIR-4 INTERNATIONAL CO., LTD.<br>
+  Car Booking System
+</footer>
 
 </body>
 </html>
